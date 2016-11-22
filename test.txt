@@ -1,5 +1,0 @@
-{
-  "access_token": "6f8fd6d932804b123af358cbef6270a0",
-  "refresh_token": "94b096252660a351ca215c25312f0f45",
-  "expires_in": 3600
-}
