@@ -34,5 +34,5 @@ export default class AppDemo extends Component {
         );
     }
 }
-
+//test
 AppRegistry.registerComponent('AppDemo', () => AppDemo);
