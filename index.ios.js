@@ -20,7 +20,7 @@ export default class AppDemo extends Component {
 
     render() {
         let defaultName = 'loginPage';
-        //let defaultComponent = FirstPageComponent;
+        
         return (
             <Navigator
                 initialRoute={{ name: defaultName, component: loginPage }}
