@@ -1,43 +1,39 @@
 /**
- * Created by ZhouTing on 2016/11/17.
+ * Created by ZhouTing on 2016/11/28.
  */
-
 import React from 'react';
 import {
-    View,
-    TouchableOpacity,
-    Text,
-    Navigator,
     StyleSheet,
+    Text,
+    View,
+    ListView,
+    TouchableOpacity,
+    Alert
 } from 'react-native';
 
-//import AlertPageComponent from './alert';
+export default class AlarmDetailPage extends React.Component {
 
-export default class main extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name:this.props.name,
-        };
-
     }
 
+    pressButton(){
+        const {navigator} = this.props;
+        if(navigator){
+            this.props.navigator.pop();
+        }
+    }
 
-
-
-
-
-
-    render(){
-        return(
+    render() {
+        return (
             <View style={styles.all}>
                 <View>
-                    <Text style={styles.welcome}>Welcome {this.state.name}</Text>
+                    <Text>{this.props.sourceName}</Text>
                 </View>
 
                 <View>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.ButtonText}>alert</Text>
+                    <TouchableOpacity style={styles.button} onPress={this.pressButton.bind(this)}>
+                        <Text style={styles.ButtonText}>返回</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -46,14 +42,11 @@ export default class main extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    all:{
+    all: {
         flex:1,
         justifyContent:'center',
         alignItems:'center',
-    },
-    welcome:{
-        fontSize:16,
-        color:'#333',
+        marginTop: 15
     },
     button: {
         width: 120,

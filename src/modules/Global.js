@@ -1,7 +1,7 @@
-
-//var server = '10.5.16.105'  //DN平台的ip地址
-//var server = '182.150.21.232:81'  //外网DN平台的ip地址
-var server = '121.42.198.199' //DSM平台的ip地址
+/**
+ * Created by ZhouTing on 2016/11/24.
+ */
+var server = '121.42.198.199'
 var Global = {
   server:server,
   android_app_url:'https://'+server+'/DeviceNetwork/downloads/android/',

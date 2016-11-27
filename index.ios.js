@@ -10,7 +10,7 @@ import {
     View,
     Navigator
 } from 'react-native';
-import loginPage from './src/login';
+import loginPage from './src/JumpHandler';
 
 export default class AppDemo extends Component {
     constructor(props) {
@@ -19,8 +19,8 @@ export default class AppDemo extends Component {
     }
 
     render() {
-        let defaultName = 'loginPage';
-        
+        let defaultName = 'jumpPage';
+
         return (
             <Navigator
                 initialRoute={{ name: defaultName, component: loginPage }}
