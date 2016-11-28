@@ -51,12 +51,32 @@ export default class AlarmPage extends React.Component {
         }
     }
 
+
+    _alarmLevel(level){//获取过来的告警等级为数字,转化成文字
+        switch(level){
+            case 1: return '提醒';
+                break;
+            case 2: return '警告';
+                break;
+            case 3: return '次要告警';
+                break;
+            case 4: return '重要告警';
+                break;
+            case 5: return '严重告警';
+                break;
+        }
+    }
+
     _renderRow(rowData){
         return (
             <TouchableOpacity style={styles.alarmInfo} onPress={()=>this._pressRow(rowData)}>
+                <View style={styles.alarmLevel}>
+                    <Text>{this._alarmLevel(rowData.level)}</Text>
+                </View>
                 <View>
-                    <Text>{"告警来源:"+rowData.sourceName}</Text>
                     <Text>{rowData.desc}</Text>
+                </View>
+                <View  style={styles.timestamp}>
                     <Text>{this._dateFormat(rowData.timestamp)}</Text>
                 </View>
             </TouchableOpacity>
@@ -83,26 +103,14 @@ const styles = StyleSheet.create({
         marginTop: 15
     },
     alarmInfo:{
-        marginTop: 15
-    },
-    text: {
-        color: '#e4393c',
-        fontSize: 24,
-        fontWeight: 'bold',
-    },
-    button: {
-        width: 150,
-        height: 40,
-        borderRadius: 20,
-        backgroundColor: 'green',
-        overflow: 'hidden',
         marginTop: 20,
     },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: 'bold',
-        lineHeight: 34,
-        textAlign: 'center',
+    alarmLevel:{
+        marginBottom:5,
     },
+    timestamp:{
+        marginLeft:180,
+        marginTop:10,
+    },
+
 });
